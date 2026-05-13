@@ -52,14 +52,13 @@ const ModelViewer = ({ modelUrl, iosUrl, posterUrl, altText }) => {
             but model-viewer has its own progress bar by default */}
       </model-viewer>
 
-      {/* Manual AR Button - Glassmorphism Style */}
+      {/* Manual AR Button - Forced Centering on Desktop */}
       <button
         onClick={handleARClick}
         style={{ 
-          bottom: '210px',
           zIndex: 9999
         }}
-        className="fixed left-6 right-6 md:left-auto md:right-auto md:w-80 md:left-1/2 md:-translate-x-1/2 bg-primary/20 backdrop-blur-xl text-primary font-bold py-3.5 px-6 rounded-2xl border border-primary/30 shadow-[0_0_20px_rgba(0,242,254,0.2)] hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-3 cursor-pointer whitespace-nowrap"
+        className="fixed bottom-[210px] inset-x-6 md:inset-x-auto md:left-1/2 md:w-80 md:-translate-x-1/2 bg-primary/20 backdrop-blur-xl text-primary font-bold py-3.5 px-6 rounded-2xl border border-primary/30 shadow-[0_0_20px_rgba(0,242,254,0.2)] hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-3 cursor-pointer whitespace-nowrap"
       >
         <Smartphone className="w-5 h-5" />
         <span className="text-base tracking-[0.15em] uppercase font-black">Launch AR Experience</span>

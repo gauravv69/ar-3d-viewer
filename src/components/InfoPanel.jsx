@@ -4,12 +4,13 @@ import { Info, Smartphone, Maximize2, RotateCcw } from 'lucide-react';
 
 const InfoPanel = ({ modelName, projectTitle }) => {
   return (
-    <motion.div 
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.5 }}
-      className="fixed bottom-6 left-6 right-6 md:right-auto md:w-80 bg-white/5 backdrop-blur-2xl border border-white/10 rounded-2xl p-5 z-30 overflow-hidden shadow-2xl"
-    >
+    <div className="fixed bottom-6 inset-x-6 md:inset-x-auto md:left-1/2 md:w-80 md:-translate-x-1/2 z-30">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.5 }}
+        className="w-full bg-white/5 backdrop-blur-2xl border border-white/10 rounded-2xl p-5 overflow-hidden shadow-2xl"
+      >
       <div className="flex items-start justify-between mb-3">
         <div>
           <h1 className="text-xl font-bold text-white mb-0.5">{projectTitle}</h1>
@@ -38,6 +39,7 @@ const InfoPanel = ({ modelName, projectTitle }) => {
         </div>
       </div>
     </motion.div>
+    </div>
   );
 };
 
