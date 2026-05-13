@@ -31,21 +31,26 @@ function App() {
         {loading && <Loader />}
       </AnimatePresence>
 
-      <Navbar />
+      <AnimatePresence>
+        {!loading && (
+          <>
+            <Navbar />
+            <main className="w-full h-full pt-16">
+              <ModelViewer 
+                modelUrl={modelConfig.url} 
+                iosUrl={modelConfig.iosUrl}
+                posterUrl={modelConfig.poster}
+                altText={modelConfig.name}
+              />
+            </main>
 
-      <main className="w-full h-full pt-16">
-        <ModelViewer 
-          modelUrl={modelConfig.url} 
-          iosUrl={modelConfig.iosUrl}
-          posterUrl={modelConfig.poster}
-          altText={modelConfig.name}
-        />
-      </main>
-
-      <InfoPanel 
-        modelName={modelConfig.name}
-        projectTitle={modelConfig.project}
-      />
+            <InfoPanel 
+              modelName={modelConfig.name}
+              projectTitle={modelConfig.project}
+            />
+          </>
+        )}
+      </AnimatePresence>
 
       {/* Decorative background elements */}
       <div className="fixed top-1/4 -left-20 w-64 h-64 bg-primary/10 rounded-full blur-[100px] pointer-events-none" />

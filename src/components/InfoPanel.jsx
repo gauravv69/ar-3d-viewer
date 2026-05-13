@@ -8,7 +8,7 @@ const InfoPanel = ({ modelName, projectTitle }) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.5 }}
-      className="fixed bottom-6 left-6 right-6 md:right-auto md:w-80 glass-card rounded-2xl p-5 z-30"
+      className="fixed bottom-6 left-6 right-6 md:right-auto md:w-80 bg-white/5 backdrop-blur-2xl border border-white/10 rounded-2xl p-5 z-30 overflow-hidden shadow-2xl"
     >
       <div className="flex items-start justify-between mb-3">
         <div>

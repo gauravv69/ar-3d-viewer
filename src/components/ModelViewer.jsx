@@ -38,6 +38,9 @@ const ModelViewer = ({ modelUrl, iosUrl, posterUrl, altText }) => {
         interaction-prompt="auto"
         ar-placement="floor"
         touch-action="pan-y"
+        camera-orbit="0deg 75deg 105%"
+        camera-target="0m 0.5m 0m"
+        field-of-view="30deg"
         style={{ width: '100%', height: '100%', backgroundColor: 'transparent' }}
       >
         {/* AR Hand Prompt (optional visual aid) */}
@@ -49,19 +52,17 @@ const ModelViewer = ({ modelUrl, iosUrl, posterUrl, altText }) => {
             but model-viewer has its own progress bar by default */}
       </model-viewer>
 
-      {/* Manual AR Button - MOVED OUTSIDE model-viewer tag */}
+      {/* Manual AR Button - Glassmorphism Style */}
       <button
         onClick={handleARClick}
         style={{ 
-          bottom: '50%',
-          background: 'linear-gradient(45deg, #00f2fe 0%, #4facfe 100%)',
-          transform: 'translate(-50%, 50%)',
+          bottom: '210px',
           zIndex: 9999
         }}
-        className="fixed left-1/2 text-dark font-black py-4 px-12 rounded-full shadow-[0_0_50px_rgba(0,242,254,1)] hover:scale-110 active:scale-95 transition-all flex items-center gap-3 border-none cursor-pointer whitespace-nowrap"
+        className="fixed left-6 right-6 md:left-auto md:right-auto md:w-80 md:left-1/2 md:-translate-x-1/2 bg-primary/20 backdrop-blur-xl text-primary font-bold py-3.5 px-6 rounded-2xl border border-primary/30 shadow-[0_0_20px_rgba(0,242,254,0.2)] hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-3 cursor-pointer whitespace-nowrap"
       >
-        <Smartphone className="w-6 h-6" />
-        <span className="text-xl tracking-[0.2em] uppercase font-black">Launch AR View</span>
+        <Smartphone className="w-5 h-5" />
+        <span className="text-base tracking-[0.15em] uppercase font-black">Launch AR Experience</span>
       </button>
     </div>
   );
