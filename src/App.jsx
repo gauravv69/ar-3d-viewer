@@ -4,6 +4,7 @@ import ModelViewer from './components/ModelViewer';
 import Loader from './components/Loader';
 import InfoPanel from './components/InfoPanel';
 import { motion, AnimatePresence } from 'framer-motion';
+import robotModel from './assets/models/robot.glb';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -17,7 +18,7 @@ function App() {
   }, []);
 
   const modelConfig = {
-    url: '/src/assets/models/robot.glb',
+    url: robotModel,
     iosUrl: 'https://modelviewer.dev/shared-assets/models/RobotExpressive.usdz',
     name: 'X-100 Autonomous Unit',
     project: 'NOVA FRONTIER',
