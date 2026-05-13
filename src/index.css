@@ -11,7 +11,11 @@ body {
   padding: 0;
   background: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 100%);
   color: #ffffff;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    sans-serif;
   overflow: hidden;
 }
 
@@ -65,17 +69,20 @@ model-viewer {
   white-space: nowrap;
   bottom: 132px;
   padding: 0px 16px 0px 40px;
-  font-family: Roboto Regular, Helvetica Neue, sans-serif;
+  font-family:
+    Roboto Regular,
+    Helvetica Neue,
+    sans-serif;
   font-size: 14px;
-  color:#4285f4;
+  color: #4285f4;
   height: 36px;
   line-height: 36px;
   border-radius: 18px;
-  border: 1px solid #DADCE0;
+  border: 1px solid #dadce0;
 }
 
 #ar-button:active {
-  background-color: #E8EAED;
+  background-color: #e8eaed;
 }
 
 #ar-button:focus {
@@ -87,19 +94,32 @@ model-viewer {
 }
 
 @keyframes circle {
-  from { transform: translateX(-50%) rotate(0deg) translateX(50px) rotate(0deg); }
-  to   { transform: translateX(-50%) rotate(360deg) translateX(50px) rotate(-360deg); }
+  from {
+    transform: translateX(-50%) rotate(0deg) translateX(50px) rotate(0deg);
+  }
+  to {
+    transform: translateX(-50%) rotate(360deg) translateX(50px) rotate(-360deg);
+  }
 }
 
 @keyframes elongate {
-  from { transform: translateX(100px); }
-  to   { transform: translateX(-100px); }
+  from {
+    transform: translateX(100px);
+  }
+  to {
+    transform: translateX(-100px);
+  }
+}
+
+/* Move the default 3D interaction prompt (hand icon) up */
+model-viewer::part(interaction-prompt) {
+  transform: translateY(-250px);
 }
 
 model-viewer > #ar-prompt {
   position: absolute;
   left: 50%;
-  bottom: 175px;
+  bottom: 350px;
   animation: elongate 2s infinite ease-in-out alternate;
   display: none;
 }
